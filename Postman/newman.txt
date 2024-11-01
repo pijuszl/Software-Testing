@@ -1,0 +1,3 @@
+cd C:\testing\Postman
+
+newman run "Gmail API 2lab.postman_collection.json" -e "Gmail API 2lab.postman_collection.json" --env-var "oAuthToken=ya29.a0Ad52N38lXk4J-8_bEHmRF2vfqskqnQ5CCe1qzF7lJIQl3N8aqBbMbNaC9GTPB0PH1_WDyHUxpCKrO8W5Kzo4lGuPndHsyhkwfWbn7PSX0aIxAQ0G6xEEd4rPshheLyWdzG7EnAhUst7BrD9AEtONvjkeVx2E0VAQK_q2aCgYKARASARESFQHGX2Mi1tEBZvrYEO5elk4GB6wLgg0171"

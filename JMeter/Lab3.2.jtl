@@ -1,0 +1,10 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1715173533941,1307,signup/signup,200,OK,Thread Group 1-1,text,true,,302,701,1,1,https://api.demoblaze.com/signup,1306,0,1026
+1715173535260,336,login/login,200,OK,Thread Group 1-1,text,true,,17150,710,1,1,https://api.demoblaze.com/login,323,0,0
+1715173535589,7,login/login-0,200,OK,Thread Group 1-1,text,true,,16447,0,1,1,null,0,0,0
+1715173535668,368,addToCart/prod.html,200,OK,Thread Group 1-1,text,true,,5537,773,1,1,https://www.demoblaze.com/prod.html?idp_=9,367,0,164
+1715173536037,259,addToCart/addtocart,200,OK,Thread Group 1-1,text,true,,307,761,1,1,https://api.demoblaze.com/addtocart,259,0,0
+1715173536297,207,buy/check,200,OK,Thread Group 1-1,text,true,,519,685,1,1,https://api.demoblaze.com/check,204,0,0
+1715173536598,246,buy/viewcart,200,OK,Thread Group 1-1,text,true,,579,701,1,1,https://api.demoblaze.com/viewcart,244,0,0
+1715173536894,258,buy/deletecart,200,OK,Thread Group 1-1,text,true,,316,677,1,1,https://api.demoblaze.com/deletecart,258,0,0
+1715173537158,2,Debug Sampler,200,OK,Thread Group 1-1,text,true,,15924,0,1,1,null,0,0,0

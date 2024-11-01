@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "FidrtW9U2QCF9bo0uhmaEM+8ko5pZyl/g1KBwXtaP7/HXXvFfn5ioHY/AkcFID9vNeF/QQ6IblwlISnA9xgePQ==",
+  "success": true,
+  "projectFilePath": "C:\\testing\\SetupTest\\SetupTest\\TestingPractice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pijus\\.nuget\\packages\\anglesharp\\1.1.0\\anglesharp.1.1.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\microsoft.codecoverage\\17.9.0\\microsoft.codecoverage.17.9.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\microsoft.net.test.sdk\\17.9.0\\microsoft.net.test.sdk.17.9.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.9.0\\microsoft.testplatform.objectmodel.17.9.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\microsoft.testplatform.testhost\\17.9.0\\microsoft.testplatform.testhost.17.9.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\nunit\\4.0.1\\nunit.4.0.1.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\nunit.analyzers\\4.0.1\\nunit.analyzers.4.0.1.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\selenium.support\\4.18.0\\selenium.support.4.18.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\selenium.webdriver\\4.18.0\\selenium.webdriver.4.18.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\selenium.webdriver.chromedriver\\121.0.6167.18400\\selenium.webdriver.chromedriver.121.0.6167.18400.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\system.text.encoding.codepages\\8.0.0\\system.text.encoding.codepages.8.0.0.nupkg.sha512",
+    "C:\\Users\\Pijus\\.nuget\\packages\\webdrivermanager\\2.17.2\\webdrivermanager.2.17.2.nupkg.sha512"
+  ],
+  "logs": []
+}

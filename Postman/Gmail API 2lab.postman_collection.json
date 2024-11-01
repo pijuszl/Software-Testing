@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "09f7ea07-b3c2-4b00-8750-5a9eabddcb40",
+		"name": "Gmail API 2lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24775789"
+	},
+	"item": [
+		{
+			"name": "Send a New Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseJson = pm.response.json();\r",
+							"if(responseJson.id) {\r",
+							"    pm.environment.set(\"emailId\", responseJson.id); // Assuming the response has the ID\r",
+							"}\r",
+							"\r",
+							"// Check for successful response status\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check if the response has the 'id' field (indicating an email was created)\r",
+							"pm.test(\"Response has email ID\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"id\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oAuthToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"raw\": \"RnJvbTogdGVzdGFzLnRlc3RhdmljaXVzMTFAZ21haWwuY29tDQpUbzogcGlqdXN6bGF0a3VzQGdtYWlsLmNvbQ0KDQpMYWJhcywgxI1pYSBwb3N0bWFuIGxhacWha2FzLg==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+					"protocol": "https",
+					"host": [
+						"gmail",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"messages",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a New Label",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseJson = pm.response.json();\r",
+							"if(responseJson.id) {\r",
+							"    pm.environment.set(\"labelId\", responseJson.id);\r",
+							"}\r",
+							"// Check for successful response status\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check if the response has the 'id' field (indicating an label was created)\r",
+							"pm.test(\"Response has label ID\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"id\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has label with name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var labelName = pm.environment.get(\"randomString\");\r",
+							"    pm.expect(jsonData.name).to.eql(labelName);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Function to generate random string\r",
+							"function generateRandomString(length) {\r",
+							"    var text = \"\";\r",
+							"    var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+							"\r",
+							"    for (var i = 0; i < length; i++)\r",
+							"        text += possible.charAt(Math.floor(Math.random() * possible.length));\r",
+							"\r",
+							"    return text;\r",
+							"}\r",
+							"\r",
+							"// Generate a random string of 10 characters\r",
+							"var randomString = generateRandomString(10);\r",
+							"\r",
+							"// Set the random string as a variable in Postman\r",
+							"pm.environment.set(\"randomString\", randomString);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oAuthToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{randomString}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gmail.googleapis.com/gmail/v1/users/me/labels",
+					"protocol": "https",
+					"host": [
+						"gmail",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"labels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify the Sent Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check for successful response status\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Depending on the API's response structure, you might check for confirmation of label addition\r",
+							"// This example assumes the API returns the updated email's details\r",
+							"pm.test(\"Email has new label\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var labelId = pm.environment.get(\"labelId\");\r",
+							"    pm.expect(jsonData.labelIds).to.include(labelId);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oAuthToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"addLabelIds\": [\"{{labelId}}\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gmail.googleapis.com/gmail/v1/users/me/messages/{{emailId}}/modify",
+					"protocol": "https",
+					"host": [
+						"gmail",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"messages",
+						"{{emailId}}",
+						"modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Emails by Label",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check for successful response status\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Verify the response contains expected email ID\r",
+							"pm.test(\"Email's ID is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var emailId = pm.environment.get(\"emailId\");\r",
+							"\r",
+							"    // Since 'messages' is an array, you need to iterate over it or access a specific element\r",
+							"    // This example assumes you want to check the first message in the array\r",
+							"    pm.expect(jsonData.messages[0].id).to.eql(emailId);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oAuthToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gmail.googleapis.com/gmail/v1/users/me/messages?labelIds={{labelId}}",
+					"protocol": "https",
+					"host": [
+						"gmail",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"gmail",
+						"v1",
+						"users",
+						"me",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "labelIds",
+							"value": "{{labelId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.variables.get(\"variable_key\");"
+				]
+			}
+		}
+	]
+}
